@@ -20,7 +20,7 @@ public class MyServlet2 extends HttpServlet {
 		String fname = request.getParameter("fname");
 		String lname = request.getParameter("lname");
 
-		// send HTML page to client
+		// send HTML page to client.
 
 		out.println("<h2 > Servlet2 </h2 >");
 		out.println("");
