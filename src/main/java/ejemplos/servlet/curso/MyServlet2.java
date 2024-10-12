@@ -12,16 +12,22 @@ import java.io.PrintWriter;
 public class MyServlet2 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+						 HttpServletResponse response) throws ServletException, IOException {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+
 		// send HTML page to client
+
+		out.println("<h2 > Servlet2 </h2 >");
+		out.println("");
 		out.println("<html>");
 		out.println("<head><title>Ejemplo HTML desde Servlet</title></head>");
 		out.println("<body>");
-		out.println("<h1>Bienvenido!!</h1>");
+		out.println("<h1>Bienvenido/a!! </h1>" + fname + " " + lname);
 	}
 
 }

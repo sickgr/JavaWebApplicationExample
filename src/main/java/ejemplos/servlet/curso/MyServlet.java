@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 public class MyServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+						 HttpServletResponse response) throws ServletException, IOException {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
@@ -21,9 +21,21 @@ public class MyServlet extends HttpServlet {
 		out.println("<html>");
 		out.println("<head><title>Ejemplo HTML desde Servlet</title></head>");
 		out.println("<body>");
-		out.println("<h1>Ejemplo Servlet</h1>");
-		out.println("<p>Este es un ejemplo en el curso de Java para generar HTML desde un Servlet.</p>");
-		out.println("<p><a href=\"/myServlet2\">Vamos al otro Servlet</a></p>");
+
+		out.println("<h2 > Servlet1 </h2 >");
+		out.println("");
+
+		out.println("<form action = \"/myServlet2\" >");
+		out.println("<label for=\"fname\">Nombre:</label> <br>");
+		out.println("<input type = \"text\" id = \"fname\" name = \"fname\" ><br >");
+		out.println("<label for=\"lname\" > Apellido:</label ><br >");
+		out.println("<input type = \"text\" id = \"lname\" name = \"lname\" ><br ><br >");
+		out.println("<input type = \"submit\" value = \"Enviar\" >");
+		out.println("</form >");
+		out.println("");
+
+
+		// out.println("<p><a href=\"/myServlet2\">Vamos al otro Servlet</a></p>");
 		out.println("</body></html>");
 	}
 
